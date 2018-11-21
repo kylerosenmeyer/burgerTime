@@ -1,0 +1,30 @@
+<h1>Eat Da Burger!</h1>
+<h2>Burger Menu</h2>
+
+<ul>
+  {{#each burger}}
+  <li>
+    <p>
+      {{burger_name}}
+      <button data-ID="{{id}}" class="deleteBurger">Eat Da Burger!</button>
+    </p>
+  </li>
+  {{/each}}
+</ul>
+
+<h2>Add to the Menu</h2>
+<form id="createBurger" class="button-size">
+  <textarea type="text" name="burger"></textarea>
+  <button type="submit" id="addBurger">Add Burger!</button>
+</form>
+
+<h2>Update the Menu</h2>
+<form id="updateBurger" class="button-size">
+  <select name="id">
+		{{#each burger}}
+			<option value="{{this.id}}">{{this.burger}}</option>
+		{{/each}}
+	</select>
+  <textarea type="text" name="burger" placeholder="burger"></textarea>
+  <button type="submit">Update Burger!</button>
+</form>
