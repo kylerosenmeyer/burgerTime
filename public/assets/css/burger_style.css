@@ -1,0 +1,65 @@
+body {
+    background-image: url("../img/yellow.png");
+    text-align: center;
+    font-family: 'Boogaloo', cursive;
+}
+
+h1 {
+    font-family: 'Black Han Sans', sans-serif;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+h3 {
+    font-family: 'Cabin', sans-serif;
+}
+
+p {
+    display: block;
+}
+
+option {
+    display: block;
+    background-color: transparent;
+    border: 3px solid rgb(0,0,0);
+}
+
+button {
+    display: block;
+    margin: 5px auto;
+    font-size: 0.8em;
+    background-color: transparent;
+    border: 3px solid rgb(0,0,0);
+}
+
+textarea {
+    display: block;
+    margin: 5px auto;
+    background-color: transparent;
+    border: 3px solid rgb(0,0,0);
+}
+
+.topRow {
+    border-bottom: 5px solid rgb(0,0,0);
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.dapast, .dacurrent, .datools {
+    border-left: 5px solid rgb(0,0,0);
+    border-right: 5px solid rgb(0,0,0);
+    border-top: 2px solid rgb(0,0,0);
+    border-bottom: 2px solid rgb(0,0,0);
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.bottomRow {
+    border-top: 5px solid rgb(0,0,0);
+    border-radius: 20px;
+}
+
+#copyright {
+    padding: 10px 0px 0px;
+}
+
