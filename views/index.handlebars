@@ -6,9 +6,9 @@
     </div>
   </section>
 
-  <section class="row mainRow">
+  <section class="row lettuce">
 
-    <div class="col-md-4 dacurrent">
+    <div class="col-md-12 dacurrent">
       <h3>Burger Menu</h3>
 
       <summary>
@@ -25,12 +25,15 @@
       </summary>
 
     </div>
-    
-    <div class="col-md-4 dapast">
+  </section>
+
+  <section class="row tomato">
+    <div class="col-md-12 dapast">
 
       <h3>Past Burgers</h3>
 
       <details>
+        <summary>See What Has Been Devoured</summary>
         <ul>
           {{#each pastburger}}
           <li>
@@ -45,12 +48,15 @@
       </details>
 
     </div>
-    
-    <div class="col-md-4 datools">
+  </section>
+
+  <section class="row beef">
+    <div class="col-md-12 datools">
 
       <h3>Menu Tools</h3>
 
       <details>
+        <summary>Work on the Menu</summary>
         <h3>Add to the Menu</h3>
         <form id="createBurger" class="button-size">
           <textarea type="text" name="burgerName" id="burgerName"></textarea>
@@ -59,33 +65,28 @@
 
         <h3>Update the Menu</h3>
         <form id="updateBurger" class="button-size">
-          <select name="id" id="burgerList">
-            {{#each burger}}
-              <option value="{{id}}">{{burger_name}}</option>
-            {{/each}}
-          </select>
+
+          <div class="custom-select">
+            <select name="id">
+              {{#each burger}}
+                <option value={{id}}>{{burger_name}}</option>
+              {{/each}}
+            </select>
+          </div>
+
           <textarea type="text" name="burgerUpdate" id="burgerUpdate"></textarea>
           <button type="submit" id="changeBurger">Update Burger!</button>
+
         </form>
       </details>
 
     </div>
-    
   </section>
 
-  <section class="row bottomRow">
+  <footer class="row bottomRow">
     <div class="col-md-12">
-      <p id="copyright">&copy; Kyle Rosenmeyer</p>
+      <p id="copyright">This Burger was made by &copy; Kyle Rosenmeyer</p>
     </div>
-  </section>
+  </footer>
 
 </main>
-
-
-
-
-
-
-
-
-

@@ -69,7 +69,7 @@ $(".deleteBurger").click( function() {
 //Event Listener for clicking the "Update Burger" button.
 $("#changeBurger").click( () => {
     event.preventDefault()
-    let bfID = $("[name=id]").val().trim(),
+    let bfID = $(".same-as-selected").attr("id"),
         burgerUpdate = {
             burger_id: bfID,
             burger_name: $("#burgerUpdate").val().trim(),
