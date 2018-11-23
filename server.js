@@ -2,7 +2,7 @@ const
     express = require("express"),
     handlebars = require("express-handlebars"),
     app = express(),
-    PORT = process.env.POT || 8080,
+    PORT = process.env.PORT || 8080,
     controller = require("./controller/burger_controller.js")
 
 //Setup Middleware
