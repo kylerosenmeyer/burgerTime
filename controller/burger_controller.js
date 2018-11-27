@@ -17,6 +17,7 @@ module.exports = function(app) {
             //The "data" that comes back to the allBurgers function is the result generated in orm.js. 
             // console.log("current: ", currentData)
             // console.log("past: ", pastData)
+            //When the callback returns to this file, render the page.
             res.render("index", 
             { 
                 burger: currentData,
@@ -37,8 +38,9 @@ module.exports = function(app) {
         function addBurger(currentData, pastData) {
 
             //This route brings in the new burger (object) being added.
-            console.log("back at burger Controller: ", newBurger)
+            // console.log("back at burger Controller: ", newBurger)
             //The "data" that comes back to the addBurger function is the result generated in orm.js. 
+            //When the callback returns to this file, render the page.
             res.render("index", 
             { 
                 burger: currentData,
@@ -56,31 +58,34 @@ module.exports = function(app) {
 
         function perform(currentData, pastData) {
 
-            console.log("back at burger Controller: ", burgerAction)
-
+            // console.log("back at burger Controller: ", burgerAction)
+            //When the callback returns to this file, render the page.
             res.render("index", 
             { 
                 burger: currentData,
                 pastburger: pastData
             } )
         }
+        //Execute the chain of commands. Pass the burger_name and burger_devoured state onward to be updated in the database.
         burger.statusUpdate(burgerAction, perform)
     })
 
+    //The deleteBurger DELETE Route removes the Burger Menu (and database.)
     app.delete("/api/deleteburger", (req, res) => {
 
         let burgerDeletion = req.body
         
         function destroy(currentData, pastData) {
 
-            console.log("back at burger Controller: ", burgerDeletion)
-
+            // console.log("back at burger Controller: ", burgerDeletion)
+            //When the callback returns to this file, render the page.
             res.render("index",
             {
                 burger: currentData,
                 pastBurger: pastData
             })
         }
+        //Execute the chain of commands. Pass the burger_name and burger_devoured state onward to be deleted from the database.
         burger.deleteDaBurger(burgerDeletion, destroy)
     })
 
@@ -91,14 +96,15 @@ module.exports = function(app) {
 
         function update(currentData, pastData) {
 
-            console.log("back at burger Controller: ", burgerUpdate)
-
+            // console.log("back at burger Controller: ", burgerUpdate)
+            //When the callback returns to this file, render the page.
             res.render("index", 
             { 
                 burger: currentData,
                 pastburger: pastData
             } )
         }
+        //Execute the chain of commands. Pass the burger_name and burger_devoured state onward to be updated in the database.
         burger.nameUpdate(burgerUpdate, update)
     })
 }

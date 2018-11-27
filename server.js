@@ -1,3 +1,4 @@
+//Setup constant variables
 const 
     express = require("express"),
     handlebars = require("express-handlebars"),

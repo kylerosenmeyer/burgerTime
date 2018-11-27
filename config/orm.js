@@ -2,7 +2,7 @@ const connection = require("./connection.js")
 
 let orm = {
 
-   //* Get All Da Burgers 
+   //* Get All Da Burgers from the database
   queryAllBurgers: function(table, column, send) {
 
     let query = "SELECT * FROM ?? ORDER BY ?? DESC"
@@ -19,11 +19,12 @@ let orm = {
           currentData.push(result[i])
         } else pastData.push(result[i])
       }
+      //Send the resulting data back to burger_controller.js
       send(currentData, pastData) 
     } )
   },
 
-  //* Add A Burger 
+  //* Add A Burger to the database
   queryAddBurger: function(table, name, devoured, send) {
 
     let query = "INSERT INTO ?? (burger_name, burger_devoured) VALUES (?,?)"
@@ -43,12 +44,13 @@ let orm = {
             currentData.push(result[i])
           } else pastData.push(result[i])
         }
+        //Send the resulting data back to burger_controller.js
         send(currentData, pastData)
       } )
     })
   },
 
-  //* Eat A Burger
+  //* Eat/Restore A Burger (update status in database)
   queryBurgerStatus: function(table, devoured, id, send) {
 
     let query = "UPDATE ?? SET burger_devoured = ? WHERE id = ?"
@@ -67,11 +69,12 @@ let orm = {
             currentData.push(result[i])
           } else pastData.push(result[i])
         }
+        //Send the resulting data back to burger_controller.js
         send(currentData, pastData)
        } )
     })
   },
-
+  //* Update A Burger in the Database (name change)
   queryBurgerUpdate: function(table, name, id, send) {
 
     let query = "UPDATE ?? SET burger_name = ? WHERE id = ?"
@@ -90,11 +93,12 @@ let orm = {
             currentData.push(result[i])
           } else pastData.push(result[i])
         }
+        //Send the resulting data back to burger_controller.js
         send(currentData, pastData)
        } )
     })
   },
-
+  //*Delete A Burger in the Database
   queryDeleteBurger: function(table, id, send) {
 
     let query = "DELETE FROM ?? WHERE id = ?"
@@ -113,21 +117,10 @@ let orm = {
             currentData.push(result[i])
           } else pastData.push(result[i])
         }
+        //Send the resulting data back to burger_controller.js
         send(currentData, pastData)
        } )
     })
-  },
-  //* Update A Burger
-  queryUpdateBurger: function(table, name, id) {
-
-    let query = "UPDATE ?? SET burger_name = ? WHERE id = ?"
-
-    connection.query(query, [table, name, id], (err, result) => {
-
-        if (err) throw err
-        console.log(result)
-      }
-    )
   }
 }
 

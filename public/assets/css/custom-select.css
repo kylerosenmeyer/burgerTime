@@ -1,8 +1,9 @@
 /*!This code section comes from w3 Schools: https://www.w3schools.com/howto/howto_custom_select.asp */
+/*This code has been adjusted by Kyle Rosenmeyer for the purposes of the Burger Project. This styles the drop down menu when
+updating a burger.*/
 
 /*the container must be positioned relative:*/
 .custom-select {
-    /* position: relative; */
     font-family: 'Boogaloo', cursive;
     width: 50%;
     height: auto;
@@ -20,12 +21,7 @@
   }
   /*style the arrow inside the select element:*/
   .select-selected:after {
-    /* position: absolute; */
     content: "";
-    /* top: 14px;
-    right: 10px;
-    width: 0;
-    height: 0; */
     color: rgb(0,0,0);
     border-color: #fff transparent transparent transparent;
   }
@@ -41,16 +37,10 @@
     padding: 8px 16px;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    /* cursor: pointer; */
   }
   /*style items (options):*/
   .select-items {
-    /* position: relative; */
     background-color: transparent;
-    /* top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99; */
   }
   /*hide the items when the select box is closed:*/
   .select-hide {

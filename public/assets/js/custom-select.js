@@ -1,4 +1,7 @@
 //!This code section comes from w3 Schools: https://www.w3schools.com/howto/howto_custom_select.asp
+//This code has been adjusted by Kyle Rosenmeyer for the purposes of the Burger Project. This styles the drop down menu when
+//updating a burger.
+
 var x, i, j, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
